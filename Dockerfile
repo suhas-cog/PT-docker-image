@@ -29,9 +29,9 @@ RUN cd /home/docker && mkdir actions-runner && cd actions-runner \
 
 RUN chown -R docker ~docker && /home/docker/actions-runner/bin/installdependencies.sh
 
-COPY startup.sh /usr/local/bin/
+COPY start.sh /usr/local/bin/
 
-RUN chmod +x /usr/local/bin/startup.sh
+RUN chmod +x /usr/local/bin/start.sh
 # Install OpenJDK 16
 RUN apt-get install -y openjdk-16-jdk
 
