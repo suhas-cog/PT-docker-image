@@ -6,7 +6,7 @@ GH_REPOSITORY=$GH_REPOSITORY
 GH_TOKEN=$GH_TOKEN
  
 RUNNER_SUFFIX=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 5 | head -n 1)
-RUNNER_NAME="dockerNodeDevOps-${RUNNER_SUFFIX}" --labels ${GH_LABEL}
+RUNNER_NAME="dockerNodeDevOps-${RUNNER_SUFFIX}"
  
 REG_TOKEN=$(curl -sX POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${GH_TOKEN}" https://api.github.com/repos/${GH_OWNER}/${GH_REPOSITORY}/actions/runners/registration-token | jq .token --raw-output)
 #REG_TOKEN=$REG_TOKEN
